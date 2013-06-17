@@ -1,0 +1,9 @@
+---
+:orm: mongoid
+:test: rspec
+:mock: none
+:script: none
+:renderer: erb
+:stylesheet: compass
+:namespace: Drafts
+:migration_format: number
