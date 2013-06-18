@@ -8,6 +8,8 @@ gem 'rake'
 
 gem 'mongoid', '~> 3.0.0'
 
+gem 'bcrypt-ruby'
+
 gem 'erubis', '~> 2.7.0'
 gem 'rabl'
 
