@@ -13,4 +13,6 @@ if defined?(LogBuddy)
   })
 end
 
+Dotenv.load!
+
 Padrino.load!

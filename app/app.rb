@@ -15,6 +15,11 @@ module Drafts
 
     enable :sessions
 
+    use OmniAuth::Builder do
+      provider :developer unless Padrino.env == :production
+      provider :google_oauth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET']
+    end
+
     ##
     # Caching support
     #

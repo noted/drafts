@@ -3,30 +3,28 @@ require 'spec_helper'
 describe User do
   let(:user) { create :user }
 
+  it { should validate_presence_of :uid }
+  it { should validate_presence_of :provider }
   it { should validate_presence_of :email }
 
   it { user.should be_valid }
 
-  describe '.authenticate' do
-    let(:action) do
-      User.authenticate(user.email, 'foobar')
+  describe '.omniauth!' do
+    let(:omniauth) do
+      User.omniauth!(
+        {
+          'uid'      => 'foobar',
+          'provider' => 'google_oauth2',
+          'info'     => {
+            'email' => 'foo@bar.com'
+          }
+        }
+      )
     end
 
-    it { action.should be_an_instance_of User }
-    it { action.should eql user }
-  end
-
-  describe '#password' do
-    it { user.password.should be_an_instance_of BCrypt::Password }
-    it { user.password.should == 'foobar' }
-  end
-
-  describe '#password=' do
-    before do
-      user.password = 'barfoo'
-      user.save
-    end
-
-    it { user.password.should == 'barfoo' }
+    it { omniauth.should be_valid }
+    it { omniauth.uid.should eql 'foobar' }
+    it { omniauth.provider.should eql 'google_oauth2' }
+    it { omniauth.email.should eql 'foo@bar.com' }
   end
 end

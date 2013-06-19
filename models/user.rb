@@ -1,25 +1,18 @@
-require 'bcrypt'
-
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
-  include BCrypt
 
-  field :email,         type: String
-  field :password_hash, type: String
+  field :uid,      type: String
+  field :provider, type: String
+  field :email,    type: String
 
-  validates_presence_of :email
+  validates_presence_of :uid, :provider, :email
 
-  def self.authenticate(e, p)
-    u = where(:email => e).first if e.present?
-    u && u.password == p ? u : nil
-  end
-
-  def password
-    @password ||= Password.create(self.password_hash)
-  end
-
-  def password=(str)
-    self.password_hash = @password
+  def self.omniauth!(auth)
+    create! do |user|
+      user.uid      = auth['uid']
+      user.provider = auth['provider']
+      user.email    = auth['info']['email']
+    end
   end
 end
