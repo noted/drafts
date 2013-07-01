@@ -27,4 +27,8 @@ describe User do
     it { omniauth.provider.should eql 'google_oauth2' }
     it { omniauth.email.should eql 'foo@bar.com' }
   end
+
+  describe '#generate_access_token!' do
+    it { user.access_token.should_not be_nil }
+  end
 end
