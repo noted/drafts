@@ -4,18 +4,119 @@
 		<meta charset="utf-8">
 		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" >
 		<meta content="width=device-width,initial-scale=1" name="viewport">
-		<meta content="" name="description">
-		<meta content="" name="author">
+		<meta content="Take notes with confidence." name="description">
+		<meta content="Noted" name="author">
 
-		<title></title>
+		<title>Drafts</title>
 
 		<link href="/humans.txt" rel="author" type="text/plain">
-		<link href="/assets/application.css" rel="stylesheet">
+		<link href="/css/application.css" rel="stylesheet">
+
+		<script type="text/javascript" src="//use.typekit.net/rau7fcj.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	</head>
 	<body>
 		<div id="contain">
 			<header>
+				<nav class="top-bar">
+					<ul class="title-area">
+						<li class="name">
+							<h1><a href="#">Drafts</a></h1>
+						</li>
+						<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+					</ul>
 
+					<section class="top-bar-section">
+						<ul class="left">
+							<li class="divider"></li>
+							<li class="active"><a href="#">Main Item 1</a></li>
+							<li class="divider"></li>
+							<li><a href="#">Main Item 2</a></li>
+							<li class="divider"></li>
+							<li class="has-dropdown"><a href="#">Main Item 3</a>
+
+								<ul class="dropdown">
+									<li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
+
+										<ul class="dropdown">
+											<li><label>Dropdown Level 2 Label</label></li>
+											<li><a href="#">Dropdown Level 2a</a></li>
+											<li><a href="#">Dropdown Level 2b</a></li>
+											<li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
+
+												<ul class="dropdown">
+													<li><label>Dropdown Level 3 Label</label></li>
+													<li><a href="#">Dropdown Level 3a</a></li>
+													<li><a href="#">Dropdown Level 3b</a></li>
+													<li class="divider"></li>
+													<li><a href="#">Dropdown Level 3c</a></li>
+												</ul>
+											</li>
+											<li><a href="#">Dropdown Level 2d</a></li>
+											<li><a href="#">Dropdown Level 2e</a></li>
+											<li><a href="#">Dropdown Level 2f</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Dropdown Level 1b</a></li>
+									<li><a href="#">Dropdown Level 1c</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Dropdown Level 1d</a></li>
+									<li><a href="#">Dropdown Level 1e</a></li>
+									<li><a href="#">Dropdown Level 1f</a></li>
+									<li class="divider"></li>
+									<li><a href="#">See all &rarr;</a></li>
+								</ul>
+							</li>
+							<li class="divider"></li>
+						</ul>
+
+						<!-- Right Nav Section -->
+						<ul class="right">
+							<li class="divider hide-for-small"></li>
+							<li class="has-dropdown"><a href="#">Main Item 4</a>
+
+								<ul class="dropdown">
+									<li><label>Dropdown Level 1 Label</label></li>
+									<li class="has-dropdown"><a href="#" class="">Dropdown Level 1a</a>
+
+										<ul class="dropdown">
+											<li><a href="#">Dropdown Level 2a</a></li>
+											<li><a href="#">Dropdown Level 2b</a></li>
+											<li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
+
+												<ul class="dropdown">
+													<li><a href="#">Dropdown Level 3a</a></li>
+													<li><a href="#">Dropdown Level 3b</a></li>
+													<li><a href="#">Dropdown Level 3c</a></li>
+												</ul>
+											</li>
+											<li><a href="#">Dropdown Level 2d</a></li>
+											<li><a href="#">Dropdown Level 2e</a></li>
+											<li><a href="#">Dropdown Level 2f</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Dropdown Level 1b</a></li>
+									<li><a href="#">Dropdown Level 1c</a></li>
+									<li class="divider"></li>
+									<li><label>Dropdown Level 1 Label</label></li>
+									<li><a href="#">Dropdown Level 1d</a></li>
+									<li><a href="#">Dropdown Level 1e</a></li>
+									<li><a href="#">Dropdown Level 1f</a></li>
+									<li class="divider"></li>
+									<li><a href="#">See all &rarr;</a></li>
+								</ul>
+							</li>
+							<li class="divider"></li>
+							<li class="divider show-for-small"></li>
+							<li class="has-form">
+								<a class="button" href="#">Join</a>
+							</li>
+							<li class="has-form">
+								<a class="button" href="#">Login</a>
+							</li>
+						</ul>
+					</section>
+				</nav>
 			</header>
 			<div id="main" role="main">
 				<%= yield %>

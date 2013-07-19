@@ -16,6 +16,9 @@ gem 'erubis', '~> 2.7.0'
 gem 'rabl'
 
 gem 'compass'
+gem 'zurb-foundation'
+gem 'susy'
+
 gem 'barista'
 
 group :development do
