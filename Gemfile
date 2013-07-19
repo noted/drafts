@@ -10,6 +10,8 @@ gem 'dotenv'
 
 gem 'mongoid', '~> 3.0.0'
 
+gem 'bcrypt-ruby', require: nil
+
 gem 'erubis', '~> 2.7.0'
 gem 'rabl'
 
