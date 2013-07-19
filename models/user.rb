@@ -4,22 +4,15 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  field :uid,          type: String
-  field :provider,     type: String
+  field :name,         type: String
   field :email,        type: String
   field :access_token, type: String
 
-  validates_presence_of :uid, :provider, :email
+  validates_presence_of :name, :email
 
   before_create :generate_access_token!
 
-  def self.omniauth!(auth)
-    create! do |user|
-      user.uid      = auth['uid']
-      user.provider = auth['provider']
-      user.email    = auth['info']['email']
-    end
-  end
+  has_many :notes
 
   private
 

@@ -4,8 +4,7 @@ FactoryGirl.define do
   end
 
   factory :user do
-    uid 'foobar'
-    provider 'google_oauth2'
+    name 'Neil deGrasse Tyson'
     email
   end
 end
