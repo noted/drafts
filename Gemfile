@@ -10,9 +10,6 @@ gem 'dotenv'
 
 gem 'mongoid', '~> 3.0.0'
 
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
-
 gem 'erubis', '~> 2.7.0'
 gem 'rabl'
 
