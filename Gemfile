@@ -6,20 +6,20 @@ gem 'puma'
 
 gem 'rake'
 
-gem 'dotenv'
-
 gem 'mongoid', '~> 3.0.0'
 
 gem 'bcrypt-ruby', require: nil
 
-gem 'erubis', '~> 2.7.0'
+gem 'haml'
 gem 'rabl'
 
+gem 'padrino-sprockets', git: 'https://github.com/nightsailer/padrino-sprockets.git'
+
+gem 'sprockets-sass'
 gem 'compass'
-gem 'zurb-foundation'
 gem 'susy'
 
-gem 'barista'
+gem 'coffee-script'
 
 group :development do
   gem 'better_errors'

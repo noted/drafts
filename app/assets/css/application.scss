@@ -20,3 +20,85 @@
 body {
 	font: 16px/1.75em $sans-serif;
 }
+
+a {
+	color: $blue-green;
+	text-decoration: none;
+
+	&:hover {
+		color: $dark-blue-green;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 1.25em;
+	text-shadow: 0 1px 0 rgba(darken($dark-blue, 10%), 0.2);
+}
+
+
+/*
+	II. Header
+*/
+
+#contain > header {
+	.inner {
+		@include container;
+
+		padding: 1em 0;
+
+		hgroup {
+			@include span-columns(4, 12);
+		}
+
+		nav {
+			@include span-columns(8 omega, 12);
+		}
+	}
+
+	background: $dark-blue;
+
+	a {
+		color: $light-grey;
+
+		&:hover {
+			color: $grey;
+		}
+	}
+
+	ul {
+		font-size: 0.85em;
+		float: right;
+
+		li {
+			display: inline-block;
+
+			& + li {
+				padding-left: 2em;
+			}
+		}
+	}
+}
+
+
+/*
+	III. Main
+*/
+
+#main {
+	margin: 2em 0;
+}
+
+
+/*
+	IV. Footer
+*/
+
+#contain > footer {
+	border-top: 1px solid #ccc;
+	margin-top: 4em;
+	padding-top: 2em;
+}
