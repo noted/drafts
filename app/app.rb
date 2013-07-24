@@ -21,6 +21,8 @@ module Drafts
 
     sprockets url: 'assets', minify: (Padrino.env == :production), paths: assets
 
+    set :markdown, Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
+
     ##
     # Caching support
     #

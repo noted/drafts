@@ -10,6 +10,8 @@ gem 'mongoid', '~> 3.0.0'
 
 gem 'bcrypt-ruby', require: nil
 
+gem 'redcarpet'
+
 gem 'haml'
 gem 'rabl'
 
