@@ -6,7 +6,7 @@ Drafts::Web.helpers do
   end
 
   def current_user
-    @current_user ||= User.where(access_token: params[:drafts]).first
+    @current_user = User.where(access_token: session[:drafts]).first
     @current_user
   end
 end
