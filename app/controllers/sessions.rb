@@ -1,6 +1,6 @@
 Drafts::Web.controller :sessions do
   get :new, map: '/login' do
-    render 'sessions/new'
+    render 'sessions/new', layout: 'sessions'
   end
 
   post :create do
@@ -16,7 +16,7 @@ Drafts::Web.controller :sessions do
     end
   end
 
-  get :destroy do
+  get :destroy, map: '/logout' do
     session[:drafts] = nil
 
     redirect url(:idnex)
