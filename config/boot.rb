@@ -13,4 +13,8 @@ if defined?(LogBuddy)
   })
 end
 
+Padrino.after_load do
+  Padrino.require_dependencies(Padrino.root('app/mutations/**/*.rb'))
+end
+
 Padrino.load!
