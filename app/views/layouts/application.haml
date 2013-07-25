@@ -24,13 +24,25 @@
       %header
         .inner
           %hgroup
-            %h1= link_to "Drafts", url(:index)
+            %h1
+              %a{:href => url(:index)}
+                Drafts.
+                %span beta
           %nav
             %ul
-              %li= link_to "Join", url(:users, :new)
-              %li= link_to "Login", url(:sessions, :new)
+              - if current_user
+                %li= link_to "Settings", ""
+                %li= link_to "Logout", url(:sessions, :destroy)
+              - else
+                %li= link_to "Join", url(:users, :new)
+                %li= link_to "Login", url(:sessions, :new)
+
 
       #main{:role => "main"}
         = yield
+
+      %footer
+        .inner
+          %p= s("<a href='http://getnotedapp.com'>Noted</a> fecit #{Time.now.year}.")
 
     %script{:src => "/assets/application.js"}

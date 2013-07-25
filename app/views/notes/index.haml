@@ -1,0 +1,19 @@
+#notes
+  %header
+    %hgroup
+      %h2 Notes
+    %nav
+      = link_to "New", url(:notes, :new), :class => "btn"
+  %section
+    %table
+      %thead
+        %tr
+          %th Title
+          %th Last Modified
+          %th Actions
+      %tbody
+        - @notes.each do |note|
+          %tr
+            %td= link_to note.title, url(:notes, :view, :id => note.id)
+            %td= note.updated_at.strftime('%e %b %Y')
+            %td= 'Edit'
