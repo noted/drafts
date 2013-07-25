@@ -1,6 +1,7 @@
 class Note
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Canable::Ables
 
   field :title, type: String
   field :text,  type: String
@@ -10,4 +11,16 @@ class Note
   belongs_to :user
 
   has_and_belongs_to_many :tags
+
+  def viewable_by?(u)
+    self.user == u
+  end
+
+  def updatable_by?(u)
+    self.viewable_by?(u)
+  end
+
+  def destroyable_by?(u)
+    self.viewable_by?(u)
+  end
 end
