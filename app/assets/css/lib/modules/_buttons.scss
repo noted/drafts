@@ -11,9 +11,9 @@ a.btn, button, input[type="submit"], span.btn {
 	color: $base;
 	cursor: pointer;
 	display: inline-block;
-	font: bold 0.85em $sans-serif;
+	font: 500 0.9em $sans-serif;
 	padding: 0.5em 0.75em;
-	text-transform: uppercase;
+	// text-transform: uppercase;
 	text-shadow: none;
 
 	&:hover {
