@@ -19,6 +19,6 @@ Drafts::Web.controller :sessions do
   get :destroy, map: '/logout' do
     session[:drafts] = nil
 
-    redirect url(:idnex)
+    redirect url(:index)
   end
 end
