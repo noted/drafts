@@ -1,0 +1,122 @@
+/*
+	Drafts
+		file: application.scss
+*/
+
+
+@import "lib/base";
+
+$total-columns: 24;
+$column-width: 1em;
+$gutter-width: 0.25em;
+$grid-padding: $gutter-width;
+
+
+/*
+	= Appendix
+		I. Universal
+		II. Header
+*/
+
+
+/*
+	I. Universal
+*/
+
+body {
+	background: $base;
+	color: $text;
+	font: 16px/1.75em $serif;
+}
+
+a {
+	border-bottom: 1px solid $grey;
+	color: $text;
+	text-decoration: none;
+
+	&:hover {
+		color: $dark-blue-green;
+	}
+}
+
+form {
+	input[type="email"], input[type="password"] {
+		background: $base;
+		border: 2px solid $light-grey;
+		width: 65%;
+
+		&:focus {
+			border: 2px solid $grey;
+		}
+	}
+
+	nav {
+		margin: 0 auto;
+		width: 45%;
+
+		li {
+			display: inline-block;
+
+			&:first-child {
+				float: left;
+			}
+
+			&:last-child {
+				float: right;
+			}
+		}
+	}
+}
+
+h1 {
+	font-size: 1.25em;
+	font-weight: 700;
+
+	a {
+		border: none;
+		color: $base;
+
+		&:hover {
+			color: $light-grey;
+		}
+	}
+}
+
+#contain {
+	@include border-radius(2px);
+	@include container;
+
+	background: $light-grey;
+	margin-top: 4em;
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+/*
+	II. Header
+*/
+
+#contain > header {
+	background: $dark-blue;
+	padding: 1.5em;
+}
+
+
+/*
+	III. Section
+*/
+
+#contain > section {
+	padding: 2em 0;
+
+	.flash {
+		margin-bottom: 2em;
+	}
+
+	nav {
+		padding-bottom: 1em;
+		padding-top: 1em;
+	}
+}

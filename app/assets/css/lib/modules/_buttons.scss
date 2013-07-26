@@ -1,0 +1,31 @@
+/*
+	Drafts
+		file: lib/modules/_buttons.scss
+*/
+
+a.btn, button, input[type="submit"], span.btn {
+	@include border-radius(2px);
+
+	background: $grey;
+	border: none;
+	color: $base;
+	cursor: pointer;
+	display: inline-block;
+	font: bold 0.85em $sans-serif;
+	padding: 0.5em 0.75em;
+	text-transform: uppercase;
+	text-shadow: none;
+
+	&:hover {
+		background: $dark-grey;
+		color: $base;
+	}
+
+	&.blue {
+		background: $light-blue;
+
+		&:hover {
+			background: $blue;
+		}
+	}
+}

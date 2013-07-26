@@ -1,0 +1,30 @@
+/*
+	Drafts
+		file: lib/modules/_forms.scss
+*/
+
+form {
+	input, textarea, select, .chzn-container-multi .chzn-choices {
+		@include border-radius(1px);
+
+		background: $base;
+		color: $text;
+		font: 1em/1em $serif;
+		outline: none;
+		padding: 0.5em;
+
+		&.small {
+			width: 1em;
+		}
+	}
+
+	input[type=text], input[type=email], input[type=password], textarea, select {
+		@include border-radius(2px);
+
+		border: 2px solid $light-grey;
+
+		&:focus {
+			border: 2px solid $grey;
+		}
+	}
+}

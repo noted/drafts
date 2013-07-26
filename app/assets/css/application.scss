@@ -10,9 +10,139 @@
 /*
 	= Appendix
 		I. Universal
+		II. Header
 */
 
 
 /*
 	I. Universal
 */
+
+body {
+	background: $base;
+	color: $text;
+	font: 16px/1.75em $serif;
+}
+
+a {
+	border-bottom: 1px solid $grey;
+	color: $text;
+	text-decoration: none;
+
+	&:hover {
+		color: $dark-blue-green;
+	}
+}
+
+h1 {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+h2, h3, h4, h5, h6 {
+	// font-family: $sans-serif;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 3em;
+}
+
+
+/*
+	II. Header
+*/
+
+#contain > header {
+	background: $light-grey;
+
+	.inner {
+		@include container;
+
+		padding: 1em 0;
+
+		hgroup, nav {
+			font-size: 0.9em;
+		}
+
+		hgroup {
+			@include span-columns(4, 12);
+		}
+
+		nav {
+			@include span-columns(8 omega, 12);
+		}
+	}
+
+	a {
+		border: none;
+	}
+
+	nav {
+		ul {
+			float: right;
+		}
+
+		li {
+			display: inline;
+
+			& + li {
+				margin-left: 1.75em;
+			}
+		}
+	}
+}
+
+
+/*
+	III. Main
+*/
+
+#main {
+	#index {
+		.inner {
+			@include container;
+		}
+
+		.hero {
+			background: $darker-blue;
+			color: $base;
+
+			h2 {
+				margin-bottom: 0.5em;
+			}
+
+			p {
+				color: $light-grey;
+			}
+
+			ul {
+				margin-top: 1em;
+
+				li {
+					display: inline-block;
+				}
+			}
+
+			.inner {
+				padding: 5em 0 3em;
+			}
+		}
+	}
+}
+
+
+/*
+	IV. Footer
+*/
+
+#contain > footer {
+	border-top: 1px solid $light-grey;
+	color: $grey;
+	margin-top: 3.5em;
+	padding-top: 1.75em;
+
+	.inner {
+		@include container;
+	}
+}

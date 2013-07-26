@@ -1,6 +1,6 @@
 Drafts::Web.controller :sessions do
   get :new, map: '/login' do
-    render 'sessions/new', layout: 'sessions'
+    render 'sessions/new', layout: false
   end
 
   post :create do
@@ -11,7 +11,7 @@ Drafts::Web.controller :sessions do
 
       redirect url(:index)
     else
-      flash[:warning] = 'Incorrect email/password combination.'
+      flash[:error] = 'Incorrect email/password combination.'
       redirect url(:sessions, :new)
     end
   end

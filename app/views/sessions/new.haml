@@ -10,7 +10,7 @@
     %title Drafts
 
     %link{:href => "/humans.txt", :rel => "author", :type => "text/plain"}/
-    %link{:href => "/assets/application.css", :rel => "stylesheet"}/
+    %link{:href => "/assets/sessions.css", :rel => "stylesheet"}/
 
     %script{:src => "//use.typekit.net/wzl4fpj.js", :type => "text/javascript"}
     :coffeescript
@@ -22,23 +22,16 @@
   %body
     #contain
       %header
-        .inner
-          %hgroup
-            %h1= link_to "Drafts", url(:index)
+        %h1= link_to "Drafts.", url(:index)
+      %section
+        - form_tag url(:sessions, :create), :method => "post" do
+          = partial 'partials/flash', :locals => { :flash => flash }
+
+          %p= email_field_tag :email, :placeholder => "Email"
+          %p= password_field_tag :password, :placeholder => "Password"
           %nav
             %ul
-              - if current_user
-                %li= link_to "Account", ""
-                %li= link_to "Logout", url(:sessions, :destroy)
-              - else
-                %li= link_to "Join", url(:users, :new)
-                %li= link_to "Login", url(:sessions, :new)
-
-      #main{:role => "main"}
-        = yield
-
-      %footer
-        .inner
-          %p= "Noted fecit #{Time.now.year}."
+              %li= link_to "Join", url(:users, :new), :class => "btn"
+              %li= submit_tag "Login", :class => "btn blue"
 
     %script{:src => "/assets/application.js"}
