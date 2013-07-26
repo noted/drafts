@@ -1,0 +1,19 @@
+#notes
+  %header
+  %section
+    %table.notes
+      %thead
+        %tr
+          %th.cb
+            %input{:type => "checkbox"}
+          %th Title
+          %th Last Modified
+          %th Actions
+      %tbody
+        - @notes.each do |note|
+          %tr
+            %td.cb
+              %input{:type => "checkbox"}
+            %td= link_to note.title, url(:notes, :view, :id => note.id)
+            %td= note.updated_at.strftime('%e %b %Y')
+            %td= 'Edit'

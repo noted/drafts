@@ -3,7 +3,7 @@ Drafts::Web.controllers do
     if current_user.nil?
       render 'core/index'
     else
-      @notes = current_user.notes
+      @notes = Note.desc(:updated_at).where(user_id: current_user.id).all
 
       render 'notes/index'
     end

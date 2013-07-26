@@ -48,6 +48,34 @@ h2 {
 	font-size: 3em;
 }
 
+table {
+	font-family: $sans-serif;
+	font-size: 0.9em;
+	width: 100%;
+
+	th {
+		border-bottom: 1px solid $grey;
+		font-weight: 700;
+		padding: 0.25em;
+	}
+
+	tbody {
+		tr {
+			&:hover {
+				background: lighten($light-grey, 2%);
+			}
+
+			& + tr {
+				border-top: 1px solid $light-grey;
+			}
+
+			td {
+				padding: 0.25em;
+			}
+		}
+	}
+}
+
 
 /*
 	II. Header
@@ -126,6 +154,18 @@ h2 {
 
 			.inner {
 				padding: 5em 0 3em;
+			}
+		}
+	}
+
+	#notes {
+		@include container;
+
+		margin-top: 2em;
+
+		table {
+			td:first-child {
+				width: 3%;
 			}
 		}
 	}
