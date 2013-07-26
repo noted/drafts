@@ -1,0 +1,18 @@
+/*
+	Drafts
+		file: lib/modules/_tags.scss
+*/
+
+a.tag {
+	@include border-radius(2px);
+
+	background: $light-grey;
+	border: none;
+	font: 0.75em $sans-serif;
+	padding: 0.25em 0.5em;
+
+	&:hover {
+		background: $grey;
+		color: $text;
+	}
+}

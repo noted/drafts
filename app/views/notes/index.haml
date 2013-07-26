@@ -7,13 +7,18 @@
           %th.cb
             %input{:type => "checkbox"}
           %th Title
+          %th Tags
           %th Last Modified
-          %th Actions
       %tbody
         - @notes.each do |note|
           %tr
             %td.cb
               %input{:type => "checkbox"}
             %td= link_to note.title, url(:notes, :view, :id => note.id)
-            %td= note.updated_at.strftime('%e %b %Y')
-            %td= 'Edit'
+            %td
+              %ul
+                - note.tags.each do |tag|
+                  %li
+                    %a.tag{:href => ""}= tag.text
+            %td
+              %span{:title => note.updated_at.strftime("%B %e, %Y at %l:%m%P")}= "#{time_ago_in_words(note.updated_at)} ago"
