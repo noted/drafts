@@ -21,6 +21,7 @@ class User
   before_save :encrypt_password!
 
   has_many :notes
+  has_many :tags
 
   def self.authenticate(e, p)
     u = User.where(email: e).first

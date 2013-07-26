@@ -12,6 +12,16 @@ class Note
 
   has_and_belongs_to_many :tags
 
+  def tags_as_arr
+    arr = []
+
+    self.tags.each do |tag|
+      arr << tag.text
+    end
+
+    arr
+  end
+
   def viewable_by?(u)
     self.user == u
   end
