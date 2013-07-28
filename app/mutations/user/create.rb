@@ -8,7 +8,12 @@ class UserCreate < Mutations::Command
   end
 
   def execute
+    password = user['password']
+    user.delete('password')
+
     u = User.new(user)
+    u.password = password
+    u.save
 
     return u
   end
