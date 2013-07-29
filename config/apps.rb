@@ -32,3 +32,4 @@ end
 
 # Mounts the core application for this project
 Padrino.mount('Drafts::Web', :app_file => Padrino.root('app/app.rb')).to('/')
+Padrino.mount('Drafts::API', :app_file => Padrino.root('api/app.rb')).to('/api')
