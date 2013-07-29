@@ -9,6 +9,10 @@ describe Note do
 
   it { note.should be_valid }
 
+  describe '#html' do
+    it { note.html.should include '<strong>Billions upon billions of galaxies</strong>' }
+  end
+
   describe '#viewable_by?' do
     it { note.viewable_by?(user).should be_true }
     it { note.viewable_by?(other).should be_false }

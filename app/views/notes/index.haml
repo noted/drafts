@@ -1,5 +1,7 @@
 #notes
   %header
+    = link_to "Create Note", url(:notes, :new), :class => "btn blue"
+    = partial 'partials/flash', :locals => { :flash => flash }
   %section
     %table.notes
       %thead
@@ -14,7 +16,7 @@
           %tr
             %td.cb
               %input{:type => "checkbox"}
-            %td= link_to note.title, url(:notes, :view, :id => note.id)
+            %td= link_to note.title, url(:notes, :show, :id => note.id)
             %td
               %ul
                 - note.tags.each do |tag|

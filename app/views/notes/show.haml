@@ -1,0 +1,15 @@
+#note
+  - form_tag url(:notes, :update), :class => "note ajax", :method => "patch" do
+    = hidden_field_tag :"note[id]", :class => "id", :value => @note.id
+    %header
+      .inner
+        %hgroup
+          = text_field_tag :"note[title]", :class => "title", :value => @note.title
+        %nav
+          %ul
+            %li
+              %button{:type => "submit"}
+                %span.status Save
+    %section
+      .inner
+        = text_area_tag :"note[text]", :class => "text", :placeholder => "Write your note here!", :value => @note.text

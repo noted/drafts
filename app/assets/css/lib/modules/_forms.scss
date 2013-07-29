@@ -27,4 +27,35 @@ form {
 			border: 2px solid $grey;
 		}
 	}
+
+	textarea {
+		font: 400 14px/1.75em $mono;
+		resize: none;
+	}
+
+	&.horizontal {
+		.group {
+			@include clearfix;
+
+			& + .group {
+				margin-top: 0.25em;
+			}
+
+			label {
+				display: block;
+				float: left;
+				width: columns(6, 48);
+				padding-top: 5px;
+				text-align: right;
+			}
+
+			.controls {
+				margin-left: columns(7, 48);
+			}
+
+			&.buttons {
+				margin-top: 0.5em;
+			}
+		}
+	}
 }

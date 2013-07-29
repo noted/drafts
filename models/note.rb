@@ -22,6 +22,12 @@ class Note
     arr
   end
 
+  def html
+    if self.text
+      Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true).render(self.text)
+    end
+  end
+
   def viewable_by?(u)
     self.user == u
   end

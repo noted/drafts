@@ -3,8 +3,8 @@ class NoteCreate < Mutations::Command
     model :current_user, class: User
     hash  :note do
       string :title
-      string :text
-      array  :tags
+      string :text, empty: true, nils: true
+      array  :tags, empty: true, nils: true
     end
   end
 
@@ -15,6 +15,8 @@ class NoteCreate < Mutations::Command
     )
 
     n.tags = handle_tags!(note['tags'])
+
+    current_user.notes << n
     n.save
 
     return n
