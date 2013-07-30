@@ -14,6 +14,7 @@ save = ->
   $("span.status").html("Saving...")
 
   data = {
+    current_user: $("form.note .current_user").val()
     note: {
       id: $("form.note .id").val()
       title: $("form.note .title").val()
@@ -25,7 +26,7 @@ save = ->
   $.ajax
     type: 'PATCH'
     data: data
-    url: '/notes/update'
+    url: '/api/notes/update.json'
     error: (err) ->
       console.log err
 
@@ -38,7 +39,7 @@ save = ->
       $("span.status").html "Saved!"
       $("span.status").fadeIn()
 
-      setTimeout (->
-        $("span.status").fadeOut()
-        $("span.status").val ""
-      ), 10000
+      # setTimeout (->
+      #   $("span.status").fadeOut()
+      #   $("span.status").val ""
+      # ), 10000

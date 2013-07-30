@@ -30,12 +30,17 @@ Drafts::Web.controllers :notes do
     end
   end
 
-  patch :update do
-    @note = Note.find(params[:note][:id])
-
-    NoteUpdate.run({
+  delete :destroy do
+    note = NoteDestroy.run({
       current_user: current_user,
       note: params[:note]
     })
+
+    if note.success?
+      redirect url(:index)
+    else
+      flash[:error] = note.errors
+      redirect url(:index)
+    end
   end
 end

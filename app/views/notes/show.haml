@@ -1,5 +1,6 @@
 #note
   - form_tag url(:notes, :update), :class => "note ajax", :method => "patch" do
+    = hidden_field_tag :current_user, :class => "current_user", :value => current_user.id
     = hidden_field_tag :"note[id]", :class => "id", :value => @note.id
     %header
       .inner
