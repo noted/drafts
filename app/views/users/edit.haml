@@ -1,0 +1,23 @@
+#page
+  %header
+    %h3 Account
+  %section
+  - form_tag url(:users, :update), :method => "patch", :class => "horizontal" do
+    = partial 'partials/flash', :locals => { :flash => flash }
+    = hidden_field_tag :"user[id]", :value => current_user.id
+    .group
+      %label{:for => "user[name]"} Name
+      .controls
+        = text_field_tag :"user[name]", :value => current_user.name
+    .group
+      %label{:for => "user[email]"} Email
+      .controls
+        = email_field_tag :"user[email]", :value => current_user.email
+    %hr/
+    .group
+      %label{:for => "user[password]"} Password
+      .controls
+        = password_field_tag :"user[password]"
+    .group.buttons
+      .controls
+        = submit_tag "Save", :class => "blue"

@@ -1,5 +1,6 @@
 - if flash[:notice]
-  %p= flash[:notice]
+  .flash.notice
+    %p= flash[:notice]
 - elsif flash[:warning]
   .flash.warning
     %p= flash[:warning]

@@ -28,6 +28,12 @@ form {
 		}
 	}
 
+	input {
+		&[type=text], &[type=email], &[type=password] {
+			width: 25%;
+		}
+	}
+
 	textarea {
 		font: 400 16px/1.75em $mono;
 		resize: none;

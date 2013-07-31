@@ -28,7 +28,7 @@
           %nav
             %ul
               - if current_user
-                %li= link_to "Account", ""
+                %li= link_to "Account", url(:users, :edit)
                 %li= link_to "Logout", url(:sessions, :destroy)
               - else
                 %li= link_to "Join", url(:users, :new)
