@@ -34,6 +34,10 @@ a {
 	}
 }
 
+em {
+	font-style: italic;
+}
+
 h1 {
 	font-size: 1.5em;
 	font-weight: 700;
@@ -58,6 +62,23 @@ hr {
 	border-top: 1px solid $light-grey;
 	border-bottom: none;
 	margin: 1.75em 0;
+}
+
+p {
+	& + p {
+		margin-top: 1.75em;
+	}
+}
+
+pre {
+	background: $light-grey;
+	font-family: $mono;
+	margin-top: 1.75em;
+	padding: 1em;
+}
+
+strong {
+	font-weight: bold;
 }
 
 table {
@@ -280,6 +301,10 @@ table {
 			border-bottom: 1px solid $light-grey;
 			margin-bottom: 2em;
 			padding-bottom: 1em;
+		}
+
+		article + article {
+			margin-top: 3.5em;
 		}
 	}
 }
