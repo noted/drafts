@@ -171,11 +171,23 @@ table {
 
 		header {
 			margin-bottom: 1em;
+
+			a.btn.hidden {
+				display: none;
+			}
 		}
 
 		table {
 			th:first-child, td:first-child {
 				width: 4%;
+			}
+
+			tr.highlight {
+				background: lighten($yellow, 40%);
+
+				&:hover {
+					background: lighten($yellow, 30%);
+				}
 			}
 		}
 	}

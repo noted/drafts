@@ -3,7 +3,7 @@
 
 $(document).ready ->
   $(window).keypress (event) ->
-    return true  if not (event.which is 115 and event.ctrlKey) and (event.which isnt 19)
+    return true if not (event.which is 115 and event.ctrlKey) and (event.which isnt 19)
     save()
     event.preventDefault()
     false
