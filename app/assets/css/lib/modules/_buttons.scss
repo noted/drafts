@@ -28,4 +28,22 @@ a.btn, button, input[type="submit"], span.btn {
 			background: $blue;
 		}
 	}
+
+	&.green {
+		// background: $green;
+		background: $blue-green;
+
+		&:hover {
+			// background: $dark-green;
+			background: $dark-blue-green;
+		}
+	}
+
+	&.red {
+		background: $red;
+
+		&:hover {
+			background: $dark-red;
+		}
+	}
 }

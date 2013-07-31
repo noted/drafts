@@ -1,5 +1,6 @@
 Drafts::Web.controllers :notes do
   get :index do
+    redirect url(:index)
   end
 
   get :new do

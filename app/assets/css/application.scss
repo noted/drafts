@@ -181,47 +181,72 @@ table {
 	}
 
 	#note {
-		margin-top: 4em;
+		margin-top: 2em;
 
-		header, section {
+		header, section, nav {
 			.inner {
 				@include container;
 			}
 		}
 
-		header {
-			border-bottom: 1px solid $light-grey;
-			padding-bottom: 1em;
+		& > nav {
+			margin-bottom: 2em;
 
-			hgroup {
-				@include span-columns(8, 12);
-			}
+			p {
+				font: 0.9em/1.75em $sans-serif;
 
-			nav {
-				@include span-columns(4 omega, 12);
+				a {
+					color: $grey;
 
-				ul {
-					float: right;
+					&:hover {
+						color: $blue-green;
+					}
 				}
 			}
 		}
 
-		section {
-			margin-top: 2em;
-		}
-
 		form {
-			input[type="text"] {
-				border: none;
-				font-size: 2em;
-				margin: 0;
-				padding: 0;
+			header {
+				border-bottom: 1px solid $light-grey;
+				padding-bottom: 1em;
+
+				hgroup {
+					@include span-columns(8, 12);
+
+					input.title {
+						border: none;
+						font-size: 2em;
+						margin: 0;
+						padding: 0;
+					}
+
+					input.tags {
+						border: none;
+						border-bottom: 1px solid $light-grey;
+						font-family: $sans-serif;
+						margin-left: 0;
+						padding-left: 0;
+					}
+				}
+
+				nav {
+					@include span-columns(4 omega, 12);
+
+					ul {
+						float: right;
+					}
+				}
 			}
 
-			textarea {
-				border: none;
-				padding: 0;
-				width: 100%;
+			section {
+				margin-top: 2em;
+
+				textarea {
+					border: none;
+					padding: 0;
+					height: 20em;
+					width: 100%;
+				}
 			}
 		}
 	}
@@ -247,7 +272,7 @@ table {
 #contain > footer {
 	border-top: 1px solid $light-grey;
 	color: $grey;
-	margin-top: 3.5em;
+	margin: 3.5em auto;
 	padding-top: 1.75em;
 
 	.inner {

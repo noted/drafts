@@ -4,7 +4,7 @@
 */
 
 form {
-	input, textarea, select, .chzn-container-multi .chzn-choices {
+	input, textarea, select {
 		@include border-radius(1px);
 
 		background: $base;
@@ -29,7 +29,7 @@ form {
 	}
 
 	textarea {
-		font: 400 14px/1.75em $mono;
+		font: 400 16px/1.75em $mono;
 		resize: none;
 	}
 

@@ -1,16 +1,21 @@
 #note
-  - form_tag url(:notes, :update), :class => "note ajax", :method => "patch" do
+  %nav.back
+    .inner
+      %p= link_to s("&larr; Back to Notes"), url(:index)
+  - form_tag Drafts::API.url(:notes, :update), :class => "note ajax", :method => "patch" do
     = hidden_field_tag :current_user, :class => "current_user", :value => current_user.id
     = hidden_field_tag :"note[id]", :class => "id", :value => @note.id
     %header
       .inner
         %hgroup
-          = text_field_tag :"note[title]", :class => "title", :value => @note.title
+          = text_field_tag :"note[title]", :class => "title", :placeholder => "Title", :tabindex => "1", :value => @note.title
         %nav
           %ul
             %li
               %button{:type => "submit"}
-                %span.status Save
+                Save
+      .inner
+        = text_field_tag :"note[tags]", :class => "tags", :placeholder => "Tags", :tabindex => "3", :value => @note.tags_as_str
     %section
       .inner
-        = text_area_tag :"note[text]", :class => "text", :placeholder => "Write your note here!", :value => @note.text
+        = find_and_preserve text_area_tag :"note[text]", :class => "text", :placeholder => "Write your note here!", :tabindex => "2", :value => @note.text

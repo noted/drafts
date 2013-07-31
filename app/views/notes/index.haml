@@ -1,7 +1,7 @@
 #notes
   %header
-    = link_to "Create Note", url(:notes, :new), :class => "btn blue"
     = partial 'partials/flash', :locals => { :flash => flash }
+    = link_to "New Note", url(:notes, :new), :class => "btn blue"
   %section
     %table.notes
       %thead

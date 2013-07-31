@@ -1,6 +1,10 @@
 Drafts::API.controllers :notes do
   patch :update, provides: [:json] do
-    params[:note][:tags] = [] # Fix me!
+    if params[:note][:tags].blank?
+      params[:note][:tags] = []
+    else
+      params[:note][:tags] = params[:note][:tags].split(',')
+    end
 
     note = NoteUpdate.run({
       current_user: User.find(params[:current_user]),

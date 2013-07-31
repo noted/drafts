@@ -22,6 +22,20 @@ class Note
     arr
   end
 
+  def tags_as_str
+    str = ''
+
+    self.tags.each do |tag|
+      str << tag.text
+
+      unless self.tags.last == tag
+        str << ','
+      end
+    end
+
+    str
+  end
+
   def html
     if self.text
       Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true).render(self.text)
