@@ -16,7 +16,8 @@ module Drafts
     assets = [
       'assets/css',
       'assets/jsc',
-      'assets/img'
+      'assets/img',
+      'assets/webfonts'
     ]
 
     sprockets url: 'assets', minify: (Padrino.env == :production), paths: assets
