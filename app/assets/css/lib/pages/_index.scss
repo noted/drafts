@@ -1,0 +1,53 @@
+/*
+	Drafts
+		file: lib/pages/_index.scss
+*/
+
+#main #index {
+	.inner {
+		@include container;
+	}
+
+	.hero {
+		background: $light-grey;
+		border-top: 1px solid $base;
+
+		h2 {
+			margin-bottom: 0.5em;
+		}
+
+		ul {
+			margin-top: 1em;
+
+			li {
+				display: inline-block;
+			}
+		}
+
+		.inner {
+			padding: 5em 0 3em;
+		}
+	}
+
+	.features {
+		@include container;
+
+		margin-top: 6em;
+
+		article {
+			@include span-columns(4, 12);
+
+			text-align: center;
+
+			header {
+				i {
+					font-size: 4em;
+				}
+			}
+
+			&:last-child {
+				@include omega;
+			}
+		}
+	}
+}

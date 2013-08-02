@@ -54,12 +54,14 @@ a.btn, button, input[type="submit"], span.btn {
 	}
 
 	&.social {
+		i {
+			padding-right: 0.25em;
+		}
 	}
 
 	i {
-		font-size: 1.15em;
+		font-size: 1.05em;
 		position: relative;
 		top: 3px;
-		padding-right: 0.25em;
 	}
 }

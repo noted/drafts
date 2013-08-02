@@ -7,6 +7,6 @@
 //= require_self
 
 $(document).ready ->
-  ligature()
+  # ligature()
 
   $('textarea').autosize()

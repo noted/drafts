@@ -28,11 +28,11 @@
           %nav
             %ul
               - if current_user
-                %li= link_to "Account", url(:users, :edit)
-                %li= link_to "Logout", url(:sessions, :destroy)
+                %li= link_to s("Account"), url(:users, :edit), :class => "btn"
+                %li= link_to "Logout", url(:sessions, :destroy), :class => "btn"
               - else
-                %li= link_to "Join", url(:users, :new)
-                %li= link_to "Login", url(:sessions, :new)
+                %li= link_to "Join", url(:users, :new), :class => "btn blue"
+                %li= link_to "Login", url(:sessions, :new), :class => "btn"
 
       #main{:role => "main"}
         = yield

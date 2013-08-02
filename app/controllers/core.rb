@@ -8,4 +8,8 @@ Drafts::Web.controllers do
       render 'notes/index'
     end
   end
+
+  get :ui do
+    render 'core/ui'
+  end
 end

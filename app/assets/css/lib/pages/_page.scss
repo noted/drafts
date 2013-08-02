@@ -1,0 +1,20 @@
+/*
+	Drafts
+		file: lib/pages/_page.scss
+*/
+
+#page {
+	@include container;
+
+	margin-top: 4em;
+
+	header {
+		border-bottom: 1px solid $light-grey;
+		margin-bottom: 2em;
+		padding-bottom: 1em;
+	}
+
+	article + article {
+		margin-top: 3.5em;
+	}
+}
