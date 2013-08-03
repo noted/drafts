@@ -8,7 +8,7 @@ a.tag, span.tag {
 
 	background: $light-grey;
 	border: none;
-	display: block;
+	display: inline-block;
 	font: 0.9em $sans-serif;
 	padding: 0.25em 0.5em;
 
@@ -28,6 +28,7 @@ a.tag, span.tag {
 			font-size: 0.65em;
 			padding-right: 0.5em;
 			position: relative;
+			top: 1px;
 		}
 	}
 }
@@ -48,7 +49,7 @@ div.tagsinput{
 		font: 0.8125em $sans-serif;
 		border: none;
 		padding: 5px;
-		margin-bottom: 5px;
+		margin-bottom: 7px;
 		color: $text;
 		background: $base;
 	}

@@ -44,9 +44,14 @@ $(document).ready ->
         $("form.note.ajax button").html "Failed to save!"
       success: (res) ->
         $("form.note.ajax button").removeClass "red"
-        $("form.note.ajax button").addClass "green"
+        # $("form.note.ajax button").addClass "green"
+        $("form.note.ajax button").animate
+          backgroundColor: "#1ABC9C"
+        , "slow"
         $("form.note.ajax button").html "Save"
 
         setTimeout ( ->
-          $("form.note.ajax button").removeClass "green"
-        ), 1000
+          $("form.note.ajax button").animate
+            backgroundColor: "#BDC3C7"
+          , "slow"
+        ), 10000

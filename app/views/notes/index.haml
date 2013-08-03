@@ -1,7 +1,6 @@
 #notes
   %header
     = partial 'partials/flash', :locals => { :flash => flash }
-    = link_to "New Note", url(:notes, :new), :class => "btn blue"
     = link_to "(1 selected) Delete", "", :class => "btn red hidden"
   %section
     %table.notes

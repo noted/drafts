@@ -59,6 +59,14 @@ a.btn, button, input[type="submit"], span.btn {
 		}
 	}
 
+	&.symbol {
+		i {
+			font-size: 0.75em;
+			position: relative;
+			top: 0px;
+		}
+	}
+
 	i {
 		font-size: 1.05em;
 		position: relative;

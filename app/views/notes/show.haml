@@ -14,8 +14,14 @@
             %li
               %button{:type => "submit"}
                 Save
-      .inner
-        = text_field_tag :"note[tags]", :class => "tags", :placeholder => "Tags", :tabindex => "3", :value => @note.tags_as_str
+            %li
+              %a.btn.symbol.view{:href => ""}
+                %i.ss-icon view
+      /.inner
+      /  = text_field_tag :"note[tags]", :class => "tags", :placeholder => "Tags", :tabindex => "3", :value => @note.tags_as_str
     %section
       .inner
-        = find_and_preserve text_area_tag :"note[text]", :class => "text", :placeholder => "Write your note here!", :tabindex => "2", :value => @note.text
+        .edit
+          = find_and_preserve text_area_tag :"note[text]", :class => "text", :placeholder => "Write your note here!", :tabindex => "2", :value => @note.text
+        .view
+          = s(@note.html)

@@ -28,7 +28,8 @@
           %nav
             %ul
               - if current_user
-                %li= link_to s("Account"), url(:users, :edit), :class => "btn"
+                %li= link_to s("<i class='ss-icon'>plus</i>"), url(:notes, :new), :class => "btn blue symbol"
+                %li= link_to "Account", url(:users, :edit), :class => "btn"
                 %li= link_to "Logout", url(:sessions, :destroy), :class => "btn"
               - else
                 %li= link_to "Join", url(:users, :new), :class => "btn blue"
@@ -39,6 +40,6 @@
 
       %footer
         .inner
-          %p= "Noted fecit #{Time.now.year}."
+          %p= s("&copy; #{Time.now.year} <a href=\"http://getnotedapp.com\">Noted</a>. Code on <a href=\"https://github.com/noted/drafts\">GitHub</a>.")
 
     %script{:src => "/assets/application.js"}
