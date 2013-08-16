@@ -1,0 +1,15 @@
+#notes
+  %table
+    %thead
+      %tr
+        %input{:type => "checkbox"}
+      %tr Title
+      %tr Last Modified
+
+    %tbody
+      - @notes.each do |note|
+        %tr
+          %td
+            %input{:type => "checkbox"}
+          %td= note.title
+          %td= time_ago_in_words(note.updated_at)

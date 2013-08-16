@@ -1,0 +1,20 @@
+/*
+	Drafts.
+		file: lib/css/modules/_flash.scss
+*/
+
+.flash {
+	padding: 1em;
+
+	&.notice {
+		background: $green;
+	}
+
+	&.warning {
+		background: $yellow;
+	}
+
+	&.error {
+		background: $red;
+	}
+}

@@ -1,0 +1,31 @@
+/*
+	Noted.
+		file: css/lib/modules/_buttons.scss
+*/
+
+a.btn, button, input[type="submit"] {
+	@include border-radius(1px);
+
+	background: $grey;
+	border: none;
+	cursor: pointer;
+	color: $base;
+	font-family: $sans-serif;
+	font-size: 0.85em;
+	font-weight: 500;
+	outline: 0;
+	padding: 0.35em 0.65em;
+
+	&:hover {
+		background: $dark-grey;
+		color: $base;
+	}
+
+	&.blue {
+		background: $light-blue;
+
+		&:hover {
+			background: $blue;
+		}
+	}
+}
