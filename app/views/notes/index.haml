@@ -1,15 +1,15 @@
 #notes
   %table
     %thead
-      %tr
+      %th.cb
         %input{:type => "checkbox"}
-      %tr Title
-      %tr Last Modified
+      %th Title
+      %th Last Modified
 
     %tbody
       - @notes.each do |note|
         %tr
-          %td
+          %td.cb
             %input{:type => "checkbox"}
-          %td= note.title
+          %td= link_to note.title, url(:notes, :show, :id => note.id)
           %td= time_ago_in_words(note.updated_at)

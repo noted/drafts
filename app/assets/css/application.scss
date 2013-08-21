@@ -20,7 +20,7 @@
 
 body {
 	color: $text;
-	font: 100%/1.75em $sans-serif;
+	font: 100%/1.75em $serif;
 }
 
 a {
@@ -35,11 +35,15 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: $serif;
+	font-weight: bold;
 }
 
 h1 {
 	font-size: 1.25em;
-	font-weight: bold;
+}
+
+h2 {
+	font-size: 2em;
 }
 
 table {
@@ -47,9 +51,16 @@ table {
 	font-size: 0.9em;
 	width: 100%;
 
-	th {
+	thead {
 		border-bottom: 1px solid $grey;
-		font-weight: 700;
+		padding: 0.25em;
+
+		th {
+			font-weight: 700;
+		}
+	}
+
+	th, td {
 		padding: 0.25em;
 	}
 
@@ -62,10 +73,6 @@ table {
 			& + tr {
 				border-top: 1px solid $light-grey;
 			}
-
-			td {
-				padding: 0.25em;
-			}
 		}
 	}
 }
@@ -76,22 +83,53 @@ table {
 */
 
 #contain > header {
-	background: $light-grey;
-	padding: 1em 0;
 
-	hgroup {
-		@include span-columns(6, 12);
+	.main {
+		background: $light-grey;
+		padding: 1em 0;
+
+		hgroup {
+			@include span-columns(6, 12);
+
+			input {
+				background: transparent;
+				border: none;
+				font: bold 1.25em/1.75em $serif;
+				outline: none;
+			}
+		}
+
+		nav {
+			@include span-columns(6 omega, 12);
+
+			ul {
+				float: right;
+			}
+		}
 	}
 
 	nav {
 		@include span-columns(6 omega, 12);
-
 		ul {
 			float: right;
-
 			li {
 				display: inline-block;
 			}
+		}
+	}
+
+	.sub {
+		background: lighten($light-grey, 3%);
+		padding: 0.75em 0;
+
+		input {
+			background: transparent;
+			font: 0.9em $sans-serif;
+			border: none;
+		}
+
+		hgroup {
+			@include span-columns(6, 12);
 		}
 	}
 
@@ -105,6 +143,27 @@ table {
 	III. Main
 */
 
+#page {
+	@include container;
+
+	margin-top: 3em;
+
+	header {
+		margin-bottom: 1em;
+	}
+}
+
+#notes {
+	@include container;
+
+	margin-top: 2em;
+
+	table {
+		.cb {
+			width: 3%;
+		}
+	}
+}
 
 /*
 	IV. Footer
@@ -120,6 +179,28 @@ table {
 
 		p {
 			font-size: 0.85em;
+		}
+	}
+}
+
+#note {
+	// $total-columns: 24;
+	// $column-width: 4em;
+	// $gutter-width: 1em;
+	// $grid-padding: $gutter-width;
+	header {
+		input {
+			padding: 0;
+		}
+	}
+
+	#main {
+		footer {
+			nav {
+				position: fixed;
+				bottom: 1em;
+				left: 1.5em;
+			}
 		}
 	}
 }

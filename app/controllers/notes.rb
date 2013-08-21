@@ -25,7 +25,7 @@ Drafts::Web.controllers :notes do
     @note = Note.find(params[:id])
 
     if current_user.can_view?(@note)
-      render 'notes/show'
+      render 'notes/show', layout: false
     else
       redirect url(:index)
     end

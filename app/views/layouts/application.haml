@@ -22,24 +22,22 @@
   %body
     #contain
       %header
-        .inner
-          %hgroup
-            - if @note
-              %h1= @note.title
-            - else
+        %section.main
+          .inner
+            %hgroup
               %h1= link_to "Drafts.", url(:index)
-          %nav
-            %ul
-              - if current_user
-                - if @note
-                  %li Save
+            %nav
+              %ul
+                - if current_user
+                  %li
+                    %a.btn.blue{:href => url(:notes, :new)} New Note
+                  %li
+                    %a.btn{:href => url(:sessions, :destroy)} Logout
                 - else
-                  %li New Note
-              - else
-                %li
-                  %a.btn.blue{:href => url(:users, :new)} Join
-                %li
-                  %a.btn{:href => url(:sessions, :new)} Login
+                  %li
+                    %a.btn.blue{:href => url(:users, :new)} Join
+                  %li
+                    %a.btn{:href => url(:sessions, :new)} Login
 
       = yield
 
