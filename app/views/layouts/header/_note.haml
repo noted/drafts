@@ -1,0 +1,29 @@
+%section.main
+  .inner
+    %hgroup
+      = text_field_tag :"note[title]", :class => "header", :placeholder => "Title", :value => @note.title
+    %nav
+      %ul
+        - if current_user
+          %li
+            %a.btn{:href => url(:notes, :new)}
+              %i.ss-icon check
+          %li
+            %a.btn{:href => url(:sessions, :destroy)}
+              %i.ss-icon logout
+        - else
+          %li
+            %a.btn.blue{:href => url(:users, :new)} Join
+          %li
+            %a.btn{:href => url(:sessions, :new)} Login
+%section.sub
+  .inner
+    %hgroup
+      = text_field_tag :"note[tags]", :placeholder => "Tags", :value => @note.tags_as_str
+    %nav
+      %ul
+        %li
+          %a.btn{:href => ""}
+            %i.ss-icon help
+        %li
+          %a.btn{:href => ""} View

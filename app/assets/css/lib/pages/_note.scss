@@ -1,0 +1,20 @@
+/*
+	Drafts.
+		file: lib/css/pages/_note.scss
+*/
+
+input.header {
+	padding: 0;
+	line-height: 20px;
+	vertical-align: top;
+}
+
+#main {
+	footer {
+		nav {
+			position: fixed;
+			bottom: 1em;
+			left: 1.5em;
+		}
+	}
+}

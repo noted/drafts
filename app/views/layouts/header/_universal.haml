@@ -1,0 +1,10 @@
+%section.main
+  .inner
+    %hgroup
+      %h1= link_to "Drafts.", url(:index)
+    %nav
+      %ul
+        %li
+          %a.btn.blue{:href => url(:users, :new)} Join
+        %li
+          %a.btn{:href => url(:sessions, :new)} Login

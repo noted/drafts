@@ -1,0 +1,14 @@
+/*
+	Drafts.
+		file: css/lib/pages/_page.scss
+*/
+
+#page {
+	@include container;
+
+	margin-top: 3em;
+
+	header {
+		margin-bottom: 1em;
+	}
+}

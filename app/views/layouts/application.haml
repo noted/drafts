@@ -22,26 +22,16 @@
   %body
     #contain
       %header
-        %section.main
-          .inner
-            %hgroup
-              %h1= link_to "Drafts.", url(:index)
-            %nav
-              %ul
-                - if current_user
-                  %li
-                    %a.btn.blue{:href => url(:notes, :new)} New Note
-                  %li
-                    %a.btn{:href => url(:sessions, :destroy)} Logout
-                - else
-                  %li
-                    %a.btn.blue{:href => url(:users, :new)} Join
-                  %li
-                    %a.btn{:href => url(:sessions, :new)} Login
+        - if current_user && @note
+          = partial 'layouts/header/note'
+        - elsif current_user
+          = partial 'layouts/header/authenticated'
+        - else
+          = partial 'layouts/header/universal'
 
-      = yield
+      #main= yield
 
-      - unless current_user
+      - unless current_user && @note
         %footer
           .inner
             %p &copy; 2013 <a href="#">Noted</a>.

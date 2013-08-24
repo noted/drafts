@@ -1,0 +1,27 @@
+/*
+	Drafts.
+		file: lib/css/pages/_notes.scss
+*/
+
+#notes {
+	@include container;
+
+	margin-top: 2em;
+
+	table {
+		.cb {
+			width: 3%;
+		}
+	}
+
+	section {
+		textarea {
+			border: none;
+			color: $text;
+			font: 1em/1.75em $mono;
+			outline: none;
+			padding: 0;
+			width: 100%;
+		}
+	}
+}

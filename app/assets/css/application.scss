@@ -143,26 +143,8 @@ table {
 	III. Main
 */
 
-#page {
-	@include container;
+#main {
 
-	margin-top: 3em;
-
-	header {
-		margin-bottom: 1em;
-	}
-}
-
-#notes {
-	@include container;
-
-	margin-top: 2em;
-
-	table {
-		.cb {
-			width: 3%;
-		}
-	}
 }
 
 /*
@@ -179,28 +161,6 @@ table {
 
 		p {
 			font-size: 0.85em;
-		}
-	}
-}
-
-#note {
-	// $total-columns: 24;
-	// $column-width: 4em;
-	// $gutter-width: 1em;
-	// $grid-padding: $gutter-width;
-	header {
-		input {
-			padding: 0;
-		}
-	}
-
-	#main {
-		footer {
-			nav {
-				position: fixed;
-				bottom: 1em;
-				left: 1.5em;
-			}
 		}
 	}
 }
