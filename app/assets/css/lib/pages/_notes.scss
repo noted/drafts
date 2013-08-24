@@ -19,8 +19,11 @@
 			border: none;
 			color: $text;
 			font: 1em/1.75em $mono;
+			line-height: 1em;
 			outline: none;
+			overflow: hidden;
 			padding: 0;
+			resize: none;
 			width: 100%;
 		}
 	}
