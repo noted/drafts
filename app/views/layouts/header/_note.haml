@@ -1,16 +1,13 @@
 %section.main
   .inner
     %hgroup
-      = text_field_tag :"note[title]", :class => "header", :placeholder => "Title", :value => @note.title
+      = text_field_tag :"note[title]", :class => "borderless header", :placeholder => "Title", :tabindex => "1", :value => @note.title
     %nav
       %ul
         - if current_user
           %li
             %a.btn{:href => url(:notes, :new)}
               %i.ss-icon check
-          %li
-            %a.btn{:href => url(:sessions, :destroy)}
-              %i.ss-icon logout
         - else
           %li
             %a.btn.blue{:href => url(:users, :new)} Join
@@ -19,7 +16,7 @@
 %section.sub
   .inner
     %hgroup
-      = text_field_tag :"note[tags]", :placeholder => "Tags", :value => @note.tags_as_str
+      = text_field_tag :"note[tags]", :class => "borderless", :placeholder => "Tags", :tabindex => "2", :value => @note.tags_as_str
     %nav
       %ul
         %li

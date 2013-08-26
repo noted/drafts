@@ -3,8 +3,12 @@
 		file: lib/css/pages/_note.scss
 */
 
-input.header {
+input.borderless {
 	padding: 0;
+	outline: 0;
+}
+
+input.header {
 	line-height: 20px;
 	vertical-align: top;
 }

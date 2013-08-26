@@ -14,13 +14,13 @@ $(document).ready ->
   #   padding = parseInt(getComputedStyle(data.editor.element)["padding"])
   #   data.editor.element.style.height = ((numLines * fontSize) + padding) + "px"
 
-  editor = new Behave(
-    textarea: document.getElementById("editor")
-    replaceTab: true
-    softTabs: true
-    tabSize: 2
-    autoOpen: true
-    overwrite: true
-    autoStrip: true
-    autoIndent: true
-  )
+  # editor = new Behave(
+  #   textarea: document.getElementById('editor')
+  #   replaceTab: true
+  #   softTabs: true
+  #   tabSize: 2
+  #   autoOpen: true
+  #   overwrite: true
+  #   autoStrip: true
+  #   autoIndent: true
+  # )
